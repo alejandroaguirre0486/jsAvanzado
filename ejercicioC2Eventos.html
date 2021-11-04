@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+<body>
+	<h1>Titulo</h1>
+	<form action="">
+		<input type="text">
+		<input type="text">
+		<input type="text">
+		<button type="submit">ENVIAR</button>
+	</form>
+	<section>
+		<p>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Laborum voluptatem, ratione numquam, sapiente nesciunt harum, suscipit ex voluptate repellat maxime consequuntur. Cum consequuntur ipsam ratione eius voluptate vel, numquam amet.</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque temporibus amet culpa perferendis facilis enim atque dolorem debitis, doloremque blanditiis est repudiandae modi perspiciatis rem numquam sequi quisquam sint voluptas.</p>
+	</section>
+
+	<script>
+		const titulo = document.querySelector('h1');
+		titulo.addEventListener('click',ev=>{
+			titulo.style.background='green';
+			titulo.addEventListener('click',ev=>{
+				titulo.style.background='blue';
+				titulo.addEventListener('click',ev=>{
+					titulo.style.background='red';
+				})
+			})
+		})
+	
+
+		const inputs = document.querySelectorAll('form input')
+
+		inputs.forEach(inputs =>{
+		inputs.addEventListener('focus',ev=>{
+			inputs.style.background='blue';
+			inputs.addEventListener('blur',ev=>{
+				inputs.style.background='green';
+			})
+		})
+		})
+
+parrafos  = document.querySelectorAll('p');
+for(let i = 0 ; i < parrafos.length ; i ++){
+	parrafos[i].addEventListener('click',ev=>{
+		parrafos[i].innerHTML=window.prompt('que deseas poner en los parrafos?')
+	})
+}
+
+boton = document.querySelector('button');
+boton.addEventListener('click',ev=>{
+	ev.preventDefault();
+})
+</script>
+
+</body>
+</html>
+Generar un HTML que posea un h1, un formulario con 3inputs y un submit,un section con 2 parrafos.
+Eventos :Al hacer click en el h1 se cambiara el color de fondo .
+Plus :que existan tres colores posibles(verde ,azul,rojo).
+Agregar a los tres inputs un evento de ingreso a ellos , al entrar se colocara un outline azul ,AL salir , si hubo cambias se colocara un outline verde.
+Al hacer click en los parrafos, aprecera una ventana de prompt, esto permitira modificar el texto del parrafo.
+Plus :que este pedido solo se logre si al hacer click se tenia la tecla ctrl apretada
+prevenir el comportamiento de envio del submit

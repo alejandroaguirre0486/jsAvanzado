@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+<section id="ejercicio">
+	<h2 >Titulo 1 </h2>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus facilis qui sit iusto dicta deserunt eius, autem corrupti excepturi delectus optio nisi deleniti quod distinctio illo nobis totam alias id!
+	Quos fugit consequuntur autem deleniti odit perferendis facilis recusandae tempore, unde impedit quia, repellat, consequatur ea ad. Consequuntur, magni, earum! Aut distinctio earum architecto autem ex, cumque eius quasi, odit.</p>
+	<h2>Titulo2</h2>
+	<p>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Ad, libero. Libero cumque earum, atque doloribus illo aliquid in officiis odit, et excepturi architecto qui, corporis! Aspernatur consectetur velit dicta excepturi.</p>
+	<h2>Titulo3</h2>
+	<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, atque culpa consequuntur, ab recusandae voluptas. Enim numquam sed rem tenetur corrupti, obcaecati alias cumque, placeat eius blanditiis asperiores dignissimos hic?</p>
+</section>
+<button>Boton</button>
+
+
+	<script>
+		//generar un Html que dentro de un section posea 3 titulos h2 y 3 parrafo intercalados.Tomar todos los elementos h2 y cambiarles el color de fondo.A los parrafos modificarles el color de texto y pasarlos a negrita .Agregar a todos los elementos un evento de tipo click que muestra por console un mensaje.
+		//Plus por afuera del section crear un boton que al presionarlo,agregue un nuevo parrafo al final del section 
+		const titulos = document.querySelectorAll('h2');
+		for(let i= 0 ; i < titulos.length ; i++){
+			titulos[i].style.background='grey';
+			titulos[i].onclick=()=>{console.log('mensaje');}
+		}
+		const parrafos =document.querySelectorAll('p');
+		for (let i =0; i < parrafos.length ; i++){
+			parrafos[i].style.color = 'blue';
+			parrafos [i].style.fontWeight = 'bold';
+		}
+		const section  =document.querySelector('#ejercicio');
+		const boton = document.querySelector('button');
+		boton.onclick =()=>{document.createElement('p');
+		
+	};
+	
+		
+
+	</script>
+</body>
+</html>

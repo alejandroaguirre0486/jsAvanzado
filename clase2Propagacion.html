@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Propagacion: burbujeo y captura</title>
+	<style>
+		#padre{
+			background-color: #dbb123;
+			height: 300px;
+			width: 300px;
+
+		}
+		#hijo{
+			background-color: #63dbc5;
+			height: 200px;
+			width:200px;
+
+		}
+		#nieto{
+			background-color: #9b63db;
+			height:100px;
+			width:100px;
+
+		}
+	</style>
+</head>
+<body>
+	<div id="padre">
+		PADRE
+		<div id="hijo">HIJO
+			<div id="nieto">NIETO</div>
+		</div>
+	</div>
+	
+</body>
+<script>
+	const padre = document.querySelector('#padre');
+	const hijo = padre.children[0];
+	const nieto = hijo.children[0];
+
+	padre.addEventListener("click", ev=>{
+		ev.stopPropagation();
+		console.log('click en el padre');
+	 });
+
+
+	hijo.addEventListener('click', ev=>{
+		ev.stopPropagation();
+		console.log('click en el hijo');
+	 });
+
+
+
+	nieto.addEventListener('click', ev=>{
+		ev.stopPropagation();
+		console.log('click en el nieto');
+	 });
+
+</script>
+</html>
